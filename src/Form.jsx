@@ -1,13 +1,36 @@
+import React from 'react'
+
 export default function Form(){
     
+    const [state, setState] = React.useState([])
+
+    const elementsAll = state.map(element => (
+        <li key={element}>{element}</li>
+    ))
+
+    function handleClick(event){
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
+        const newElement = formData.get("ingredient")
+        setState(prev => [...elementsAll,newElement])
+
+    }
+    
     return (
-            
-        <form className="flex justify-center mt-12 space-x-5" method="POST" action="">
+        
+        <>
+        <form onSubmit={handleClick} className="flex justify-center mt-12 space-x-5" method="POST" action="">
       
             <input className="rounded-xl w-xl border-2" type="text" id="ingredient" name="ingredient" placeholder="e.g oregano" /><br />
             <input className="rounded-xl p-2 border-2 bg-black text-white font-bold" type="submit" value="+ Add Ingredient" />
              
         </form>
+
+        <ul className="ml-150 w-3xl py-5 list-disc border-2 justify-center justify-items-center flex mt-10">
+            <li>{elementsAll}</li>
+        </ul>
+        </>
+
         
-    );
+    )
 }
