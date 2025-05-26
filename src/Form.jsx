@@ -11,7 +11,7 @@ export default function Form(){
     function formProcessing(formData){
         
         const newElement = formData.get("ingredient")
-        setState(prev => [...elementsAll,newElement])
+        setState(prev => [...prev,newElement])
 
     }
     
@@ -25,8 +25,8 @@ export default function Form(){
              
         </form>
 
-        <ul className="ml-150 w-3xl py-5 list-disc border-2 justify-center justify-items-center flex mt-10">
-            <li>{elementsAll}</li>
+        <ul className="ml-150 w-3xl py-5 list-disc mt-10 text-2xl font-bold">
+            {elementsAll}
         </ul>
         </>
 
