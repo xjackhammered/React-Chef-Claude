@@ -8,9 +8,8 @@ export default function Form(){
         <li key={element}>{element}</li>
     ))
 
-    function handleClick(event){
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
+    function formProcessing(formData){
+        
         const newElement = formData.get("ingredient")
         setState(prev => [...elementsAll,newElement])
 
@@ -19,7 +18,7 @@ export default function Form(){
     return (
         
         <>
-        <form onSubmit={handleClick} className="flex justify-center mt-12 space-x-5" method="POST" action="">
+        <form action={formProcessing} className="flex justify-center mt-12 space-x-5" method="POST">
       
             <input className="rounded-xl w-xl border-2" type="text" id="ingredient" name="ingredient" placeholder="e.g oregano" /><br />
             <input className="rounded-xl p-2 border-2 bg-black text-white font-bold" type="submit" value="+ Add Ingredient" />
