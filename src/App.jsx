@@ -35,7 +35,7 @@ function App() {
     <>
       <Header />
       <Form elements={elementsAll} onSubmit={formProcessing}/>
-      {elementsAll.length > 3 ? <div className='bg-slate-400 border-2 text-center mt-52 w-96 h-20 mx-auto'>
+      {elementsAll.length > 3 ? <div className='shadow-xl bg-slate-400 border-2 text-center mt-52 w-96 h-20 mx-auto'>
         <h2 className='font-bold'>Ready to get a recipe?</h2>
         <p>Press the button and generate a recipe</p>
         <button onClick={handleClick} className='bg-orange-400 text-amber-50 w-l font-bold rounded-full'>{state ? "Clear":"Get Recipe"}</button>
