@@ -11,7 +11,7 @@ export default function Form(){
     function formProcessing(formData){
         
         const newElement = formData.get("ingredient")
-        setState(prev => [...prev,newElement])
+        setState(prev => [...prev, newElement])
 
     }
     
