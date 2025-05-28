@@ -41,7 +41,7 @@ function App() {
           <p>Press the button and generate a recipe</p>
           <button onClick={handleClick} className='bg-orange-400 text-amber-50 w-l font-bold rounded-full'>{state ? "Clear":"Get Recipe"}</button>
         </div>:""}
-        {state ? <ClaudeRecipe />:""}
+        {state ? <ClaudeRecipe ingredients={form} />:""}
       </div>
     </>
   )
